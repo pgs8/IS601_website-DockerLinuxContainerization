@@ -1,0 +1,8 @@
+# Changelog
+
+**Type** | **Description** | **Team Member** | **Date**
+------ | ------ | ------ | ------
+Task | Initial Commit | Phil | 20210315
+Task | Updated Readme | Phil | 20210315
+Feature | Created index page with structure | Phil | 20210315
+Task | Created Task list and Changelog | Phil | 20210315
