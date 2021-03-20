@@ -120,70 +120,80 @@
         <h4 class="font-monospace mt-3" id="pwd">pwd</h4>
         <p>
             When you first open the terminal, you are in the home directory of your user. To know which directory you
-            are in, you can use the “pwd” command. It gives us the absolute path, which means the path that starts from
-            the root. The root is the base of the Linux file system. It is denoted by a forward slash( / ). The user
-            directory is usually something like "/home/username".
+            are in, you can use the <code>pwd</code> command. It gives us the absolute path, which means the path that
+            starts from the root. The root is the base of the Linux file system. It is denoted by a forward slash
+            <code>/</code>. The user directory is usually something like <code>/home/username</code>.
         </p>
         <h4 class="font-monospace mt-5" id="ls">ls</h4>
         <p>
-            Use the "ls" command to know what files are in the directory you are in. You can see all the hidden files by
-            using the command “ls -a”.
+            Use the <code>ls</code> command to know what files are in the directory you are in. You can see all the
+            hidden files by using the command <code>ls -a</code>.
         </p>
         <h4 class="font-monospace mt-5" id="cd">cd</h4>
         <p>
-            Use the "cd" command to go to a directory. For example, if you are in the home folder, and you want to go to
-            the downloads folder, then you can type in “cd Downloads”. Remember, this command is case sensitive, and you
-            have to type in the name of the folder exactly as it is. But there is a problem with these commands. Imagine
-            you have a folder named “Raspberry Pi”. In this case, when you type in “cd Raspberry Pi”, the shell will
-            take the second argument of the command as a different one, so you will get an error saying that the
-            directory does not exist. Here, you can use a backward slash. That is, you can use “cd Raspberry\ Pi” in
-            this case. Spaces are denoted like this: If you just type “cd” and press enter, it takes you to the home
-            directory. To go back from a folder to the folder before that, you can type “cd ..” . The two dots represent
-            back.
+            Use the <code>cd</code> command to go to a directory. For example, if you are in the home directory, and you
+            want to go to the Downloads directory, you type <code>cd Downloads</code>. Remember, this command
+            is case sensitive, so you have to type in the name of the directory exactly as it is.
+        </p>
+        <p>
+            But what if there's a space? Imagine you have a directory named <code>Raspberry Pi</code>. In this case,
+            when you type <code>cd Raspberry Pi</code>, the shell will take the second argument <code>Pi</code> of the
+            command as a different one, so you will get an error saying that the directory does not exist. Here, you
+            must use an escape character - the backward slash <code>\</code>. The command would look like <code>cd
+            Raspberry\ Pi</code>.
+        </p>
+        <p>
+            If you just type <code>cd</code> and press enter, it takes you to the home directory. To go up one level
+            to the parent directory, you can type <code>cd ..</code>. The two dots represent the parent directory.
         </p>
         <h4 class="font-monospace mt-5" id="dir">mkdir &amp; rmdir</h4>
         <p>
-            Use the mkdir command when you need to create a folder or a directory. For example, if you want to make a
-            directory called “DIY”, then you can type “mkdir DIY”. Remember, as told before, if you want to create a
-            directory named “DIY Hacking”, then you can type “mkdir DIY\ Hacking”. Use rmdir to delete a directory. But
-            rmdir can only be used to delete an empty directory. To delete a directory containing files, use rm.
+            Use the <code>mkdir</code> command to create a directory. For example, if you want to make a
+            directory called <code>DIY</code>, type <code>mkdir DIY</code>. Remember, if you want to create a
+            directory named <code>DIY Hacking</code>, then you need to escape the space character using a backslash
+            <code>\</code>. The command would be <code>mkdir DIY\ Hacking</code>.
+        </p>
+        <p>
+            Use <code>rmdir</code> to delete a directory. <code>rmdir</code> can only be used to delete an empty
+            directory. To delete a directory containing files, use <code>rm</code>.
         </p>
         <h4 class="font-monospace mt-5" id="rm">rm</h4>
         <p>
-            Use the rm command to delete files and directories. Use "rm -r" to delete just the directory. It deletes
-            both the folder and the files it contains when using only the rm command.
+            Use the <code>rm</code> command to delete files and directories. Use <code>rm -r</code> to delete a
+            directory. This deletes the directory and the files it contains.
         </p>
         <h4 class="font-monospace mt-5" id="touch">touch</h4>
         <p>
-            The touch command is used to create a file. It can be anything, from an empty txt file to an empty zip file.
-            For example, “touch new.txt”.
+            The <code>touch</code> command is used to create a file. It can be anything, from an empty txt file to an
+            empty zip file.
+            For example, <code>touch new.txt</code>.
         </p>
         <h4 class="font-monospace mt-5" id="man">man &amp; COMMAND --help</h4>
         <p>
-            To know more about a command and how to use it, use the man command. It shows the manual pages of the
-            command. For example, “man cd” shows the manual pages of the cd command. Typing in the command name and the
-            argument helps it show which ways the command can be used (e.g., cd –help).
+            To learn more about a command and how to use it, use <code>man COMMAND</code>. This shows the manual pages
+            of the command. For example, <code>man cd</code> shows the manual pages of the cd command. Typing in the
+            command name and the argument <code>--help</code> will show how the command can be used.
         </p>
         <h4 class="font-monospace mt-5" id="cp">cp</h4>
         <p>
-            Use the cp command to copy files through the command line. It takes two arguments: The first is the location
-            of the file to be copied, the second is where to copy.
+            Use <code>cp</code> command to copy files through the command line. It takes two arguments: The first is the
+            location of the file to be copied, the second is where to copy.
         </p>
         <h4 class="font-monospace mt-5" id="mv">mv</h4>
         <p>
-            Use the mv command to move files through the command line. We can also use the mv command to rename a file.
-            For example, if we want to rename the file “text” to “new”, we can use “mv text new”. It takes the two
-            arguments, just like the cp command.
+            Use <code>mv</code> to move files through the command line. We can also use the mv command to rename a file.
+            For example, if we want to rename the file <code>text</code> to <code>new</code>, we can use <code>mv text
+            new</code>. It takes the two arguments, just like the <code>cp</code> command.
         </p>
         <h4 class="font-monospace mt-5" id="locate">locate</h4>
         <p>
-            The locate command is used to locate a file in a Linux system, just like the search command in Windows. This
-            command is useful when you don't know where a file is saved or the actual name of the file. Using the -i
-            argument with the command helps to ignore the case (it doesn't matter if it is uppercase or lowercase). So,
-            if you want a file that has the word “hello”, it gives the list of all the files in your Linux system
-            containing the word "hello" when you type in “locate -i hello”. If you remember two words, you can separate
-            them using an asterisk (*). For example, to locate a file containing the words "hello" and "this", you can
-            use the command “locate -i *hello*this”.
+            The <code>locate</code> command is used to locate a file in a Linux system, just like the search command in
+            Windows. This command is useful when you don't know where a file is saved or the actual name of the file.
+            Using the <code>-i</code> argument with the command tells it to ignore case. So, if you want a file that has
+            the word <code>hello</code>, it gives the list of all the files in your Linux system containing the word
+            <code>hello</code> when you type in <code>locate -i hello</code>. If you remember two words, you can
+            separate them using an asterisk <code>*</code>. For example, to locate a file containing the words
+            <code>hello</code> and <code>this</code>, you can use the command <code>locate -i *hello*this</code>.
         </p>
     </div>
 </main>
