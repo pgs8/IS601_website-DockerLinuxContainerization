@@ -6,12 +6,12 @@
   - [x] Create navbar 
 - [x] Create About page
   - [x] Use carousel 
-- [ ] Create Content page template
+- [x] Create Content page template
   - [ ] Use right-side fixed menu to nav between pages
-- [ ] Write content for pages
-  - [ ] Virtualization
-  - [ ] Containerization
-  - [ ] V vs C
+- [x] Write content for pages
+  - [x] Virtualization
+  - [x] Containerization
+  - [x] V vs C
   - [ ] Linux commands
   - [ ] Docker
   - [ ] pyCharm

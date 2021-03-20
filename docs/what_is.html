@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>What is... :: Docker, Linux, and Containerization :: Spring 2021 - IS601 </title>
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <script src="js/bootstrap.bundle.js"></script>
+</head>
+<body data-bs-offset="1" data-bs-spy="scroll" data-bs-target="#myWhatIsList">
+<!-- Navigation -->
+<nav class="navbar navbar-expand-md navbar-dark bg-dark fixed-top">
+    <div class="container px-lg-5 px-1">
+        <a class="navbar-brand" href="./index.html">Docker, Linux, and Containerization</a>
+        <button aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"
+                class="navbar-toggler" data-bs-target="#navbarSupportedContent" data-bs-toggle="collapse" type="button">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="justify-content-end collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item">
+                    <a aria-current="page" class="nav-link" href="./index.html">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a aria-current="page" class="nav-link" href="#">About</a>
+                </li>
+                <li class="nav-item dropdown">
+                    <a aria-expanded="false" class="nav-link dropdown-toggle active" data-bs-toggle="dropdown"
+                       id="navbarDropdownWhatIs" role="button">
+                        What is
+                    </a>
+                    <ul aria-labelledby="navbarDropdownWhatIs" class="dropdown-menu ">
+                        <li><a class="dropdown-item" href="./what_is.html#virtualization">Virtualization</a></li>
+                        <li><a class="dropdown-item" href="./what_is.html#containerization">Containerization</a></li>
+                        <li><a class="dropdown-item" href="./what_is.html#comparison">How do they compare?</a></li>
+                    </ul>
+                </li>
+                <li class="nav-item dropdown">
+                    <a aria-expanded="false" class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#"
+                       id="navbarDropdownTutorials" role="button">
+                        Tutorials
+                    </a>
+                    <ul aria-labelledby="navbarDropdownWhatIs" class="dropdown-menu">
+                        <li><a class="dropdown-item" href="#">Linux Commands</a></li>
+                        <li><a class="dropdown-item" href="#">Docker</a></li>
+                        <li><a class="dropdown-item" href="#">pyCharm</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+<!-- Page Content -->
+<main class="container rounded px-lg-5 px-1">
+    <!-- Jumbotron Header -->
+    <header class="container-fluid py-5 px-4 bg-light my-4 rounded">
+        <h1 class="display-3">What is...</h1>
+    </header>
+
+    <div class="list-group col-12 col-md-4 float-md-end sticky-top pb-3" id="myWhatIsList" style="top: 60px;">
+        <a class="list-group-item list-group-item-action" href="#virtualization">Virtualization</a>
+        <a class="list-group-item list-group-item-action" href="#containerization">Containerization</a>
+        <a class="list-group-item list-group-item-action" href="#comparison">How do they compare?</a>
+    </div>
+
+    <div class="col-12 col-md-8 pe-3">
+        <h3 id="virtualization">Virtualization</h3>
+        <img class="img-fluid" src="images/pic_virtualization.jpg" alt="virtualization">
+        <p>
+            Virtualization is technology that lets you create useful IT services using resources that are
+            traditionally bound to hardware. It allows you to use a physical machine’s full capacity by distributing
+            its capabilities among many users or environments.
+        </p>
+        <p>
+            Software called hypervisors separate the physical resources from the virtual environments—the things
+            that need those resources. Hypervisors can sit on top of an operating system (like on a laptop) or be
+            installed directly onto hardware (like a server), which is how most enterprises virtualize. Hypervisors
+            take your physical resources and divide them up so that virtual environments can use them.
+        </p>
+        <p>
+            Source: <a href="https://www.redhat.com/en/topics/virtualization/what-is-virtualization">
+            https://www.redhat.com/en/topics/virtualization/what-is-virtualization</a>
+        </p>
+        <h3 class="mt-5" id="containerization">Containerization</h3>
+        <img class="img-fluid" src="images/pic_containerization.jpg" alt="containerization"/>
+        <p>
+            Containerization has become a major trend in software development as an alternative or companion to
+            virtualization. It involves encapsulating or packaging up software code and all its dependencies so that
+            it can run uniformly and consistently on any infrastructure. The technology is quickly maturing,
+            resulting in measurable benefits for developers and operations teams as well as overall software
+            infrastructure.
+        </p>
+        <p>
+            Containerization allows developers to create and deploy applications faster and more securely. With
+            traditional methods, code is developed in a specific computing environment which, when transferred to a
+            new location, often results in bugs and errors. For example, when a developer transfers code from a
+            desktop computer to a virtual machine (VM) or from a Linux to a Windows operating system.
+            Containerization eliminates this problem by bundling the application code together with the related
+            configuration files, libraries, and dependencies required for it to run. This single package of software
+            or “container” is abstracted away from the host operating system, and hence, it stands alone and becomes
+            portable—able to run across any platform or cloud, free of issues.
+        </p>
+        <p>
+            Source: <a href="https://www.ibm.com/cloud/learn/containerization">
+            https://www.ibm.com/cloud/learn/containerization</a>
+        </p>
+        <h3 class="mt-5" id="comparison">How do they compare?</h3>
+        <img src="./images/pic_comparison.jpg" alt="comparison" class="img-fluid">
+        <p>
+            In traditional virtualization, a hypervisor virtualizes physical hardware. The result is that each
+            virtual machine contains a guest OS, a virtual copy of the hardware that the OS requires to run, and an
+            application and its associated libraries and dependencies.
+        </p>
+        <p>
+            Instead of virtualizing the underlying hardware, containers virtualize the operating system (typically
+            Linux) so each individual container contains only the application and its libraries and dependencies.
+            Containers are small, fast, and portable because unlike a virtual machine, containers do not need to
+            include a guest OS in every instance and can, instead, simply leverage the features and resources of the
+            host OS.
+        </p>
+        <p>
+            Just like virtual machines, containers allow developers to improve CPU and memory utilization of
+            physical machines. Containers go even further, however, because they also enable microservice
+            architectures, where application components can be deployed and scaled more granularly. This is an
+            attractive alternative to having to scale up an entire monolithic application because a single component
+            is struggling with load.
+        </p>
+        <p>
+            Source: <a href="https://www.ibm.com/cloud/blog/containers-vs-vms">
+            https://www.ibm.com/cloud/blog/containers-vs-vms</a>
+        </p>
+    </div>
+</main>
+
+<!-- Footer -->
+<footer class="py-5 mt-5 bg-dark">
+    <div class="container">
+        <p class="m-0 text-center text-white">
+            Copyright &copy; 2021 Phil Stickna & Paola Leiva <br/>
+            Content provided under the MIT License.
+        </p>
+    </div>
+</footer>
+</body>
+</html>
+
+

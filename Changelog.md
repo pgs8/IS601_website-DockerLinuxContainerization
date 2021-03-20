@@ -13,3 +13,4 @@ Fix | Added footer to About | Phil | 20210319
 Fix | added margin to footer | Phil | 20210319
 Feature | added images | Phil | 20210319
 Fix | corrected aspect ratio on pic | Phil | 20210319
+Feature | added What Is page | Phil | 20210319
