@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Tutorial - Basic Linux Commands :: Docker, Linux, and Containerization :: Spring 2021 - IS601 </title>
+    <title>Tutorial - Working with Linux :: Docker, Linux, and Containerization :: Spring 2021 - IS601 </title>
     <link href="css/bootstrap.min.css" rel="stylesheet">
     <script src="js/bootstrap.bundle.js"></script>
 </head>
@@ -40,7 +40,7 @@
                         Tutorials
                     </a>
                     <ul aria-labelledby="navbarDropdownWhatIs" class="dropdown-menu">
-                        <li><a class="dropdown-item active" href="./linux.html">Linux Commands</a></li>
+                        <li><a class="dropdown-item active" href="./linux.html">Working with Linux</a></li>
                         <li><a class="dropdown-item" href="#">Docker</a></li>
                         <li><a class="dropdown-item" href="#">pyCharm</a></li>
                     </ul>
@@ -54,17 +54,22 @@
 <main class="container rounded px-lg-5 px-1">
     <!-- Jumbotron Header -->
     <header class="container-fluid py-5 px-4 bg-light my-4 rounded">
-        <h1 class="display-3">Tutorial - Basic Linux Commands</h1>
+        <h1 class="display-3">Tutorial - Working with Linux</h1>
     </header>
 
-    <div class="list-group col-12 col-md-4 float-md-end sticky-top pb-3 navbar-expand-md" id="myLinuxCommandsList" style="top: 60px;">
+    <div class="list-group col-12 col-md-4 float-md-end sticky-top pb-3 navbar-expand-md" id="myLinuxCommandsList"
+         style="top: 60px;">
         <button aria-controls="myLinuxCommandsCollapse" aria-expanded="false" aria-label="Toggle navigation"
                 class="navbar-toggler bg-light" data-bs-target="#myLinuxCommandsCollapse" data-bs-toggle="collapse"
                 type="button">
-            <span class="dropdown-toggle">Basic Linux Commands</span>
+            <span class="dropdown-toggle">Working with Linux</span>
         </button>
         <div class="collapse navbar-collapse flex-column" id="myLinuxCommandsCollapse">
-            <a class="list-group-item list-group-item-action list-group-item-dark d-none d-md-block">Basic Linux Commands</a>
+            <a class="list-group-item list-group-item-action list-group-item-dark d-none d-md-block">Working with
+                Linux</a>
+            <a class="list-group-item list-group-item-action" href="#tips">Tips &amp; Tricks</a>
+            <a class="list-group-item list-group-item-action" href="#docker">Login to Docker</a>
+            <a class="list-group-item list-group-item-action list-group-item-primary">Basic Linux Commands</a>
             <a class="list-group-item list-group-item-action font-monospace" href="#pwd">pwd</a>
             <a class="list-group-item list-group-item-action font-monospace" href="#ls">ls</a>
             <a class="list-group-item list-group-item-action font-monospace" href="#cd">cd</a>
@@ -79,19 +84,52 @@
     </div>
 
     <div class="col-12 col-md-8 pe-3">
-        <h3 class="font-monospace " id="pwd">pwd</h3>
+        <h3 class="display-6">Working with Linux</h3>
+        <h4 class="mt-3" id="tips">Tips &amp; Tricks</h4>
+        <p>
+            You can use <code>clear</code> to clear the terminal if it gets filled up with too many commands.
+        </p>
+        <p>
+            The <code>tab</code> key is used for autocomplete. For example, type <code>cd Doc</code> and hit
+            <code>tab</code> and the terminal will autocomplete <code>cd Documents</code>.
+        </p>
+        <p>
+            <code>Ctrl+C</code> can be used to stop a command in terminal safely.
+        </p>
+        <p>
+            If that doesn't stop the command, <code>Ctrl+Z</code> can be used to force stop it.
+        </p>
+        <p>
+            You can exit from the terminal by using the <code>exit</code> command.
+        </p>
+        <p>
+            You can power off or reboot the computer by using the commands <code>sudo halt</code> and <code>sudo
+            reboot</code>.
+        </p>
+        <h4 class="mt-5" id="docker">Login to Docker</h4>
+        <p>
+            <code>docker ps</code> will give you a list of your docker containers.
+        </p>
+        <p>
+            <code>docker exec -it CONTAINER_NAME /bin/bash</code> will give you a bash shell in the container.
+        </p>
+        <p>
+            <code>docker exec -it CONTAINER_NAME COMMAND</code> will execute the COMMAND in the container.
+        </p>
+        <h3 class="display-6 mt-5">Basic Linux Commands</h3>
+        <h4 class="font-monospace mt-3" id="pwd">pwd</h4>
         <p>
             When you first open the terminal, you are in the home directory of your user. To know which directory you
             are in, you can use the “pwd” command. It gives us the absolute path, which means the path that starts from
             the root. The root is the base of the Linux file system. It is denoted by a forward slash( / ). The user
             directory is usually something like "/home/username".
         </p>
-        <h3 class="font-monospace mt-5" id="ls">ls</h3>
+        <h4 class="font-monospace mt-5" id="ls">ls</h4>
         <p>
             Use the "ls" command to know what files are in the directory you are in. You can see all the hidden files by
             using the command “ls -a”.
         </p>
-        <h3 class="font-monospace mt-5" id="cd">cd</h3>
+        <h4 class="font-monospace mt-5" id="cd">cd</h4>
         <p>
             Use the "cd" command to go to a directory. For example, if you are in the home folder, and you want to go to
             the downloads folder, then you can type in “cd Downloads”. Remember, this command is case sensitive, and you
@@ -103,41 +141,41 @@
             directory. To go back from a folder to the folder before that, you can type “cd ..” . The two dots represent
             back.
         </p>
-        <h3 class="font-monospace mt-5" id="dir">mkdir &amp; rmdir</h3>
+        <h4 class="font-monospace mt-5" id="dir">mkdir &amp; rmdir</h4>
         <p>
             Use the mkdir command when you need to create a folder or a directory. For example, if you want to make a
             directory called “DIY”, then you can type “mkdir DIY”. Remember, as told before, if you want to create a
             directory named “DIY Hacking”, then you can type “mkdir DIY\ Hacking”. Use rmdir to delete a directory. But
             rmdir can only be used to delete an empty directory. To delete a directory containing files, use rm.
         </p>
-        <h3 class="font-monospace mt-5" id="rm">rm</h3>
+        <h4 class="font-monospace mt-5" id="rm">rm</h4>
         <p>
             Use the rm command to delete files and directories. Use "rm -r" to delete just the directory. It deletes
             both the folder and the files it contains when using only the rm command.
         </p>
-        <h3 class="font-monospace mt-5" id="touch">touch</h3>
+        <h4 class="font-monospace mt-5" id="touch">touch</h4>
         <p>
             The touch command is used to create a file. It can be anything, from an empty txt file to an empty zip file.
             For example, “touch new.txt”.
         </p>
-        <h3 class="font-monospace mt-5" id="man">man &amp; COMMAND --help</h3>
+        <h4 class="font-monospace mt-5" id="man">man &amp; COMMAND --help</h4>
         <p>
             To know more about a command and how to use it, use the man command. It shows the manual pages of the
             command. For example, “man cd” shows the manual pages of the cd command. Typing in the command name and the
             argument helps it show which ways the command can be used (e.g., cd –help).
         </p>
-        <h3 class="font-monospace mt-5" id="cp">cp</h3>
+        <h4 class="font-monospace mt-5" id="cp">cp</h4>
         <p>
             Use the cp command to copy files through the command line. It takes two arguments: The first is the location
             of the file to be copied, the second is where to copy.
         </p>
-        <h3 class="font-monospace mt-5" id="mv">mv</h3>
+        <h4 class="font-monospace mt-5" id="mv">mv</h4>
         <p>
             Use the mv command to move files through the command line. We can also use the mv command to rename a file.
             For example, if we want to rename the file “text” to “new”, we can use “mv text new”. It takes the two
             arguments, just like the cp command.
         </p>
-        <h3 class="font-monospace mt-5" id="locate">locate</h3>
+        <h4 class="font-monospace mt-5" id="locate">locate</h4>
         <p>
             The locate command is used to locate a file in a Linux system, just like the search command in Windows. This
             command is useful when you don't know where a file is saved or the actual name of the file. Using the -i
