@@ -8,3 +8,4 @@ Feature | Created index page with structure | Phil | 20210315
 Task | Created Task list and Changelog | Phil | 20210315
 Task | Updated index to include carousel of cards | Phil | 20210319
 Feature | Added About page | Phil | 20210319
+Fix | Updated About link in navbar | Phil | 20210319

@@ -4,8 +4,8 @@
 - [x] Create index page
   - [x] Use Cards
   - [x] Create navbar 
-- [ ] Create About page
-  - [ ] Use carousel 
+- [x] Create About page
+  - [x] Use carousel 
 - [ ] Create Content page template
   - [ ] Use right-side fixed menu to nav between pages
 - [ ] Write content for pages
