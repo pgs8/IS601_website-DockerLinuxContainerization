@@ -12,6 +12,6 @@
   - [x] Virtualization
   - [x] Containerization
   - [x] V vs C
-  - [ ] Linux commands
+  - [x] Linux commands
   - [ ] Docker
   - [ ] pyCharm
