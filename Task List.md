@@ -7,11 +7,11 @@
 - [x] Create About page
   - [x] Use carousel 
 - [x] Create Content page template
-  - [ ] Use right-side fixed menu to nav between pages
+  - [x] Use right-side fixed menu to nav on page
 - [x] Write content for pages
   - [x] Virtualization
   - [x] Containerization
   - [x] V vs C
   - [x] Linux commands
   - [x] Docker
-  - [ ] pyCharm
+  - [x] pyCharm

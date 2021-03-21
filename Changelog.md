@@ -21,3 +21,4 @@ Feature | Added Linux commands tutorial page | Phil | 20210320
 Feature | Added Docker Login info to Linux tutorial | Phil | 20210320
 Task | updated formatting on Linux tutorial page | Phil | 20210320
 Feature | Added docker webserver tutorial page | Phil | 20210321
+Feature | Added pycharm tutorial page | Phil | 20210321
