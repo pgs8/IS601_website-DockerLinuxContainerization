@@ -13,5 +13,5 @@
   - [x] Containerization
   - [x] V vs C
   - [x] Linux commands
-  - [ ] Docker
+  - [x] Docker
   - [ ] pyCharm

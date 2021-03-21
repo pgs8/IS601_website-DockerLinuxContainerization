@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Tutorial - Docker Webserver :: Docker, Linux, and Containerization :: Spring 2021 - IS601 </title>
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <script src="js/bootstrap.bundle.js"></script>
+</head>
+<body data-bs-offset="60" data-bs-spy="scroll" data-bs-target="#myDockerSteps" style="padding-top: 56px">
+<!-- Navigation -->
+<nav class="navbar navbar-expand-md navbar-dark bg-dark fixed-top">
+    <div class="container px-lg-5 px-1">
+        <a class="navbar-brand" href="./index.html">Docker, Linux, and Containerization</a>
+        <button aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"
+                class="navbar-toggler" data-bs-target="#navbarSupportedContent" data-bs-toggle="collapse" type="button">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="justify-content-end collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item">
+                    <a aria-current="page" class="nav-link" href="./index.html">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a aria-current="page" class="nav-link" href="./about.html">About</a>
+                </li>
+                <li class="nav-item dropdown">
+                    <a aria-expanded="false" class="nav-link dropdown-toggle" data-bs-toggle="dropdown"
+                       id="navbarDropdownWhatIs" role="button">
+                        What is
+                    </a>
+                    <ul aria-labelledby="navbarDropdownWhatIs" class="dropdown-menu ">
+                        <li><a class="dropdown-item" href="./what_is.html#virtualization">Virtualization</a></li>
+                        <li><a class="dropdown-item" href="./what_is.html#containerization">Containerization</a></li>
+                        <li><a class="dropdown-item" href="./what_is.html#comparison">How do they compare?</a></li>
+                    </ul>
+                </li>
+                <li class="nav-item dropdown">
+                    <a aria-expanded="false" class="nav-link dropdown-toggle active" data-bs-toggle="dropdown" href="#"
+                       id="navbarDropdownTutorials" role="button">
+                        Tutorials
+                    </a>
+                    <ul aria-labelledby="navbarDropdownWhatIs" class="dropdown-menu">
+                        <li><a class="dropdown-item" href="./linux.html">Working with Linux</a></li>
+                        <li><a class="dropdown-item active" href="./docker.html">Docker</a></li>
+                        <li><a class="dropdown-item" href="#">pyCharm</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+<!-- Page Content -->
+<main class="container rounded px-lg-5 px-1">
+    <!-- Jumbotron Header -->
+    <header class="container-fluid py-5 px-4 bg-light my-4 rounded">
+        <h1 class="display-3">Tutorial - Docker Webserver</h1>
+    </header>
+
+    <div class="list-group col-12 col-md-4 float-md-end sticky-top pb-3 navbar-expand-md" id="myDockerSteps"
+         style="top: 60px;">
+        <button aria-controls="myDockerCollapse" aria-expanded="false" aria-label="Toggle navigation"
+                class="navbar-toggler bg-light" data-bs-target="#myDockerCollapse" data-bs-toggle="collapse"
+                type="button">
+            <span class="dropdown-toggle">Docker Webserver</span>
+        </button>
+        <div class="collapse navbar-collapse flex-column" id="myDockerCollapse">
+            <a class="list-group-item list-group-item-action list-group-item-dark d-none d-md-block">Docker
+                Webserver</a>
+            <a class="list-group-item list-group-item-action" href="#step1">Install Docker</a>
+            <a class="list-group-item list-group-item-action" href="#step2">Pull an Ubuntu image</a>
+            <a class="list-group-item list-group-item-action" href="#step3">Commit Changes to a Docker Image</a>
+            <a class="list-group-item list-group-item-action" href="#step4">Share Data Between Container and Host</a>
+            <a class="list-group-item list-group-item-action" href="#step5">vi Editor</a>
+            <a class="list-group-item list-group-item-action" href="#step6">Use Docker to Host a Website</a>
+        </div>
+    </div>
+
+    <div class="col-12 col-md-8 pe-3">
+        <h4 class="mt-3" id="step1">Install Docker</h4>
+        <p>
+            Download <a href="https://www.docker.com/products/docker-desktop">Docker Desktop</a> and run the installer.
+        </p>
+        <p>
+            After the installation, you can run <kbd>docker run hello-world</kbd> to test your installation.
+        </p>
+        <img alt="hello world" class="img-fluid rounded" src="./images/pic_docker_step_1.jpg">
+        <h4 class="mt-5" id="step2">Pull an Ubuntu image</h4>
+        <p>
+            Run <kbd>docker pull ubuntu</kbd> in your command line window.
+        </p>
+        <p>
+            You can also use <kbd>docker images</kbd> to check existing Docker images on your computer.
+        </p>
+        <img alt="ubuntu" class="img-fluid rounded" src="./images/pic_docker_step_2.jpg">
+        <h4 class="mt-3" id="step3">Commit Changes to a Docker Image</h4>
+        <p>
+            Run <kbd>docker run -it ubuntu:latest /bin/bash</kbd> to start an interactive shell using <code>bash</code>
+            inside a container running the Ubuntu image.
+        </p>
+        <figure class="figure">
+            <img alt="ubuntu running" class="figure img-fluid rounded" src="./images/pic_docker_step_3.jpg">
+            <figcaption class="figure-caption">Note the Container ID, highlighted in the screenshot above.</figcaption>
+        </figure>
+        <ol>
+            <li>Update the system using <kbd>apt-get update</kbd>.</li>
+            <li>Install apache2 and vim using <kbd>apt-get install apache2 vim</kbd>.</li>
+            <li>Exit the Ubuntu container by typing <kbd>exit</kbd>.</li>
+            <li>Check the container using <kbd>docker ps -a</kbd>.</li>
+            <li>
+                Create a new Docker image using <kbd>docker commit f1cc1e4c1f81 ubuntu-my_apache2</kbd>, using your
+                Container ID from earlier. The new image will be named <code>ubuntu-my_apache2</code>.
+            </li>
+            <li>Check the new image using <kbd>docker images</kbd>.</li>
+        </ol>
+        <img alt="ubuntu with apache" class="img-fluid rounded" src="./images/pic_docker_step_3_1.jpg">
+        <h4 class="mt-5" id="step4">Share Data Between Container and Host</h4>
+        <ol>
+            <li>
+                Create a new directory on your computer named <code>local_dir</code>. In this example, the absolute path
+                to the example directory is <code>C:\Users\Phil\Desktop\docker\local_dir\</code>. Yours will be
+                different.
+            </li>
+            <li>
+                Run
+                <pre><kbd>docker run -it -p 127.0.0.1:80:80 -v C:\Users\Phil\Desktop\docker\local_dir\:/var/www/html ubuntu-my_apache2 /bin/bash</kbd></pre>
+                <ul>
+                    <li>
+                        <code>-it</code> logs you into an interactive shell and runs a command, in this case
+                        <code>/bin/bash</code>.
+                    </li>
+                    <li><code>-p</code> exposes a port in the Docker container, in this case <code>80</code>.</li>
+                    <li>
+                        <code>-v</code> binds a host directory to a directory inside the Docker container. In this case,
+                        <code>C:\Users\Phil\Desktop\docker\local_dir\</code> was bound to <code>/var/www/html</code>
+                        which happens to be the default location for an apache webserver.
+                    </li>
+                </ul>
+            </li>
+        </ol>
+        <h4 class="mt-5" id="step5">vi Editor</h4>
+        <ol>
+            <li>
+                Navigate to the <code>/var/www/html</code> directory within the Docker container.
+                <pre><kbd>cd /var/www/html</kbd></pre>
+            </li>
+            <li>
+                Create an <code>index.html</code> file in <code>vi</code>.
+                <pre><kbd>vi index.html</kbd></pre>
+            </li>
+            <li>Press the <kbd>i</kbd> key to enter <code>INSERT mode</code>.</li>
+            <li>
+                Write a basic HTML page with a title, an h1, and a p tag.
+                <pre class="bg-info">&lt;html&gt;
+	&lt;head&gt;
+		&lt;title&gt;Apache in Docker HW&lt;/title&gt;
+	&lt;/head&gt;
+	&lt;body&gt;
+		&lt;h1&gt;Hello, World!&lt;/h1&gt;
+		&lt;p&gt;Congratulations!&lt;/p&gt;
+	&lt;/body&gt;
+&lt;/html&gt;
+</pre>
+            </li>
+            <li>
+                Use <kbd>:</kbd> to enter <code>COMMAND mode</code>, then type <kbd>wq</kbd> to write your changes
+                to file and quit <code>vi</code>.
+            </li>
+            <li>
+                Check the <code>local_dir</code> directory on your computer to see the <code>index.html</code> file.
+            </li>
+        </ol>
+        <h4 class="mt-5" id="step6">Use Docker to Host a Website</h4>
+        <p>
+            Start the apache service using <kbd>“/etc/init.d/apache2 restart</kbd> in your Docker container, then on
+            your computer, open a web browser and navigate to <code>127.0.0.1</code> to see your website.
+        </p>
+        <img alt="ubuntu" class="img-fluid rounded" src="./images/pic_docker_step_6.jpg">
+    </div>
+</main>
+
+<!-- Footer -->
+<footer class="py-5 mt-5 bg-dark">
+    <div class="container">
+        <p class="m-0 text-center text-white">
+            Copyright &copy; 2021 Phil Stickna & Paola Leiva <br/>
+            Content provided under the MIT License.
+        </p>
+    </div>
+</footer>
+</body>
+</html>
+
+
